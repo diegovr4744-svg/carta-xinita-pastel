@@ -10,10 +10,7 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html, body {
-      min-height: 100%;
-      width: 100%;
-    }
+    html, body { min-height: 100%; width: 100%; }
 
     body {
       position: relative;
@@ -71,32 +68,26 @@
       position: relative;
     }
 
-    .star {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-    }
+    .star { width: 8px; height: 8px; border-radius: 50%; }
 
     .card {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-radius: 24px;
-      border: 1.5px solid rgba(244, 184, 204, 0.45);
+      border: 1.5px solid rgba(244,184,204,0.45);
       padding: 48px 52px 52px;
       max-width: 680px;
       width: 100%;
       position: relative;
       z-index: 2;
-      box-shadow: 0 8px 48px rgba(212, 139, 163, 0.13);
+      box-shadow: 0 8px 48px rgba(212,139,163,0.13);
     }
 
     .card::before {
       content: '';
       position: absolute;
-      top: -1px;
-      left: 40px;
-      right: 40px;
+      top: -1px; left: 40px; right: 40px;
       height: 3px;
       background: linear-gradient(90deg, #f4b8cc, #b8d4f4, #f4b8cc);
       border-radius: 0 0 4px 4px;
@@ -120,23 +111,11 @@
       line-height: 1.95;
     }
 
-    .letter-body p {
-      margin-bottom: 22px;
-    }
+    .letter-body p { margin-bottom: 22px; }
+    .letter-body p:last-child { margin-bottom: 0; }
 
-    .letter-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .highlight {
-      color: #5a7abf;
-      font-weight: 400;
-    }
-
-    .bold-soft {
-      font-weight: 400;
-      color: #7a5a6a;
-    }
+    .highlight { color: #5a7abf; font-weight: 400; }
+    .bold-soft { font-weight: 400; color: #7a5a6a; }
 
     .divider {
       width: 60px;
@@ -155,9 +134,7 @@
       line-height: 1.7;
     }
 
-    .signature .pitufo {
-      font-size: 22px;
-    }
+    .signature .pitufo { font-size: 22px; }
 
     .footer-hearts {
       display: flex;
@@ -180,149 +157,134 @@
       50%       { transform: scale(1.35); opacity: 1; }
     }
 
-    @media (max-width: 600px) {
-      .card {
-        padding: 32px 24px 36px;
-      }
-      .greeting {
-        font-size: 19px;
-      }
-      .letter-body {
-        font-size: 15px;
-      }
+    .btn-siguiente {
+      display: block;
+      margin: 36px auto 0;
+      padding: 14px 40px;
+      background: transparent;
+      border: 2px solid #f4b8cc;
+      border-radius: 50px;
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-style: italic;
+      color: #c4728a;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: background 0.2s, color 0.2s;
     }
-  .btn-siguiente {
-    display: block;
-    margin: 36px auto 0;
-    padding: 14px 40px;
-    background: transparent;
-    border: 2px solid #f4b8cc;
-    border-radius: 50px;
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-style: italic;
-    color: #c4728a;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    transition: background 0.2s, color 0.2s;
-  }
 
-  .btn-siguiente:hover {
-    background: #f4b8cc;
-    color: #fff;
-  }
+    .btn-siguiente:hover { background: #f4b8cc; color: #fff; }
 
-  .sorpresa-section {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    z-index: 2;
-    position: relative;
-    animation: fadeInUp 0.8s ease forwards;
-  }
+    .sorpresa-section {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+      position: relative;
+    }
 
-  @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+    .sorpresa-visible {
+      display: flex !important;
+      animation: fadeInUp 0.8s ease forwards;
+    }
 
-  .bolso-wrap {
-    position: relative;
-    display: inline-block;
-    margin-top: 20px;
-  }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
 
-  .bolso-wrap img {
-    width: 320px;
-    max-width: 90vw;
-    border-radius: 16px;
-    filter: drop-shadow(0 8px 32px rgba(180,120,150,0.18));
-  }
+    .bolso-wrap { position: relative; display: inline-block; margin-top: 20px; }
 
-  .flecha-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 28px;
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-style: italic;
-    color: #c4728a;
-    animation: bounce 1.5s ease-in-out infinite;
-  }
+    .bolso-wrap img {
+      width: 320px;
+      max-width: 90vw;
+      border-radius: 16px;
+      filter: drop-shadow(0 8px 32px rgba(180,120,150,0.18));
+    }
 
-  .flecha-label svg {
-    flex-shrink: 0;
-  }
+    .flecha-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: #c4728a;
+      animation: bounce 1.5s ease-in-out infinite;
+    }
 
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50%       { transform: translateY(-8px); }
-  }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
 
-  .fade-out {
-    animation: fadeOut 0.6s ease forwards;
-  }
+    .fade-out {
+      animation: fadeOut 0.6s ease forwards;
+    }
 
-  @keyframes fadeOut {
-    from { opacity: 1; transform: translateY(0); }
-    to   { opacity: 0; transform: translateY(-20px); }
-  }
+    @keyframes fadeOut {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(-20px); }
+    }
 
+    @media (max-width: 600px) {
+      .card { padding: 32px 24px 36px; }
+      .greeting { font-size: 19px; }
+      .letter-body { font-size: 15px; }
+    }
   </style>
 </head>
 <body>
 
   <div class="bg-icons" id="bgIcons"></div>
 
-  <p class="header-title">una carta para ti</p>
+  <!-- SECCIÓN CARTA -->
+  <div id="seccionCarta" style="display:flex; flex-direction:column; align-items:center; width:100%; max-width:680px;">
 
-  <div class="star-row">
-    <div class="star" style="background:#f4b8cc;"></div>
-    <div class="star" style="background:#b8d4f4;"></div>
-    <div class="star" style="background:#f4b8cc;"></div>
-    <div class="star" style="background:#c4e8d4;"></div>
-    <div class="star" style="background:#f4b8cc;"></div>
-  </div>
+    <p class="header-title">una carta para ti</p>
 
-  <div class="card" id="cardCarta">
-    <div class="greeting">Para mi xinita hermosa,</div>
-
-    <div class="divider"></div>
-
-    <div class="letter-body">
-      <p>Estoy increíblemente orgulloso de ti. Dar la <span class="highlight">PAES</span> no es poca cosa — requiere dedicación, esfuerzo y una valentía que no todo el mundo tiene, y tú lo hiciste. Verte enfrentar ese desafío me recuerda lo que ya sé desde hace tiempo: que eres una persona increíble.</p>
-
-      <p>Eres de las más inteligentes que conozco. No solo en libros y pruebas, sino en la forma en que ves el mundo, en cómo piensas, en cómo resuelves las cosas. Te admiro cada vez que te veo en acción, porque todo lo que te propones lo haces con una dedicación y una calidad que pocas personas tienen. Eres, sin exagerar, <span class="bold-soft">la mejor en todo lo que hace</span>.</p>
-
-      <p>Y ahora vamos por los <span class="highlight">1000 puntos en todas las pruebas</span> — porque si alguien puede lograrlo, esa eres tú. 🎯</p>
-
-      <p>Y por si fuera poco, eres la persona más hermosa que he visto — por fuera y por dentro.</p>
-
-      <p>Te admiro muchísimo, xinita. Y me siento con mucha suerte de estar a tu lado viendo cómo brillas. 💙</p>
+    <div class="star-row">
+      <div class="star" style="background:#f4b8cc;"></div>
+      <div class="star" style="background:#b8d4f4;"></div>
+      <div class="star" style="background:#f4b8cc;"></div>
+      <div class="star" style="background:#c4e8d4;"></div>
+      <div class="star" style="background:#f4b8cc;"></div>
     </div>
 
-    <div class="divider"></div>
-
-    <div class="signature">
-      Con todo mi cariño,<br>
-      <span class="pitufo">Tu pitufo 💙</span>
+    <div class="card" id="cardCarta">
+      <div class="greeting">Para mi xinita hermosa,</div>
+      <div class="divider"></div>
+      <div class="letter-body">
+        <p>Estoy increíblemente orgulloso de ti. Dar la <span class="highlight">PAES</span> no es poca cosa — requiere dedicación, esfuerzo y una valentía que no todo el mundo tiene, y tú lo hiciste. Verte enfrentar ese desafío me recuerda lo que ya sé desde hace tiempo: que eres una persona increíble.</p>
+        <p>Eres de las más inteligentes que conozco. No solo en libros y pruebas, sino en la forma en que ves el mundo, en cómo piensas, en cómo resuelves las cosas. Te admiro cada vez que te veo en acción, porque todo lo que te propones lo haces con una dedicación y una calidad que pocas personas tienen. Eres, sin exagerar, <span class="bold-soft">la mejor en todo lo que hace</span>.</p>
+        <p>Y ahora vamos por los <span class="highlight">1000 puntos en todas las pruebas</span> — porque si alguien puede lograrlo, esa eres tú. 🎯</p>
+        <p>Y por si fuera poco, eres la persona más hermosa que he visto — por fuera y por dentro.</p>
+        <p>Te admiro muchísimo, xinita. Y me siento con mucha suerte de estar a tu lado viendo cómo brillas. 💙</p>
+      </div>
+      <div class="divider"></div>
+      <div class="signature">
+        Con todo mi cariño,<br>
+        <span class="pitufo">Tu pitufo 💙</span>
+      </div>
     </div>
+
+    <div class="footer-hearts" id="footerHearts">
+      <div class="heart-dot" style="background:#f4b8cc; animation-delay:0s;"></div>
+      <div class="heart-dot" style="background:#b8d4f4; animation-delay:0.3s;"></div>
+      <div class="heart-dot" style="background:#c4e8d4; animation-delay:0.6s;"></div>
+    </div>
+
+    <button class="btn-siguiente" id="btnSiguiente" onclick="mostrarSorpresa()">Siguiente ✨</button>
+
   </div>
 
-  <div class="footer-hearts" id="footerHearts">
-    <div class="heart-dot" style="background:#f4b8cc; animation-delay:0s;"></div>
-    <div class="heart-dot" style="background:#b8d4f4; animation-delay:0.3s;"></div>
-    <div class="heart-dot" style="background:#c4e8d4; animation-delay:0.6s;"></div>
-  </div>
-
-  <button class="btn-siguiente" id="btnSiguiente" onclick="mostrarSorpresa()">Siguiente ✨</button>
-
+  <!-- SECCIÓN SORPRESA -->
   <div class="sorpresa-section" id="sorpresaSection">
     <p class="header-title" style="margin-bottom:20px;">para ti 🎁</p>
     <div class="bolso-wrap">
-      <img src="bolso.png" alt="Bolso sorpresa" id="bolsoImg" />
+      <img src="bolso.png" alt="Bolso sorpresa" />
     </div>
     <div class="flecha-label">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c4728a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -333,45 +295,39 @@
   </div>
 
   <script>
-    const icons = [
+    function mostrarSorpresa() {
+      var seccion = document.getElementById('seccionCarta');
+      var sorpresa = document.getElementById('sorpresaSection');
+
+      seccion.classList.add('fade-out');
+
+      setTimeout(function() {
+        seccion.style.display = 'none';
+        sorpresa.classList.add('sorpresa-visible');
+      }, 600);
+    }
+
+    var icons = [
       '📓','📒','📔','📗','📘','✏️','📐','📏','🖊️',
       '🩺','🌡️','💉','🩹','💊','🔬','🩻','❤️‍🩹','🫀','🧬','🔭',
       '📓','✏️','🩺','💉','📒','🩹','📗','🌡️','📘','💊'
     ];
 
-    const container = document.getElementById('bgIcons');
+    var container = document.getElementById('bgIcons');
 
-    icons.forEach((ic) => {
-      const el = document.createElement('div');
+    icons.forEach(function(ic) {
+      var el = document.createElement('div');
       el.className = 'icon-item';
       el.textContent = ic;
-      const left  = Math.random() * 96;
-      const top   = Math.random() * 110 - 5;
-      const dur   = 5 + Math.random() * 7;
-      const delay = -(Math.random() * 8);
-      const size  = 22 + Math.random() * 16;
-      el.style.cssText = `left:${left}%;top:${top}%;animation-duration:${dur}s;animation-delay:${delay}s;font-size:${size}px;`;
+      var left  = Math.random() * 96;
+      var top   = Math.random() * 110 - 5;
+      var dur   = 5 + Math.random() * 7;
+      var delay = -(Math.random() * 8);
+      var size  = 22 + Math.random() * 16;
+      el.style.cssText = 'left:'+left+'%;top:'+top+'%;animation-duration:'+dur+'s;animation-delay:'+delay+'s;font-size:'+size+'px;';
       container.appendChild(el);
     });
-  function mostrarSorpresa() {
-    const carta = document.getElementById('cardCarta');
-    const hearts = document.getElementById('footerHearts');
-    const btn = document.getElementById('btnSiguiente');
-    const sorpresa = document.getElementById('sorpresaSection');
-
-    carta.classList.add('fade-out');
-    hearts.classList.add('fade-out');
-    btn.classList.add('fade-out');
-
-    setTimeout(() => {
-      carta.style.display = 'none';
-      hearts.style.display = 'none';
-      btn.style.display = 'none';
-      sorpresa.style.display = 'flex';
-    }, 600);
-  }
-
-  
+  </script>
 
 </body>
 </html>
