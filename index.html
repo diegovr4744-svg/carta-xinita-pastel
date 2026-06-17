@@ -191,6 +191,85 @@
         font-size: 15px;
       }
     }
+  .btn-siguiente {
+    display: block;
+    margin: 36px auto 0;
+    padding: 14px 40px;
+    background: transparent;
+    border: 2px solid #f4b8cc;
+    border-radius: 50px;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: #c4728a;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-siguiente:hover {
+    background: #f4b8cc;
+    color: #fff;
+  }
+
+  .sorpresa-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .bolso-wrap {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+  }
+
+  .bolso-wrap img {
+    width: 320px;
+    max-width: 90vw;
+    border-radius: 16px;
+    filter: drop-shadow(0 8px 32px rgba(180,120,150,0.18));
+  }
+
+  .flecha-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #c4728a;
+    animation: bounce 1.5s ease-in-out infinite;
+  }
+
+  .flecha-label svg {
+    flex-shrink: 0;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-8px); }
+  }
+
+  .fade-out {
+    animation: fadeOut 0.6s ease forwards;
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-20px); }
+  }
+
   </style>
 </head>
 <body>
@@ -207,7 +286,7 @@
     <div class="star" style="background:#f4b8cc;"></div>
   </div>
 
-  <div class="card">
+  <div class="card" id="cardCarta">
     <div class="greeting">Para mi xinita hermosa,</div>
 
     <div class="divider"></div>
@@ -232,10 +311,25 @@
     </div>
   </div>
 
-  <div class="footer-hearts">
+  <div class="footer-hearts" id="footerHearts">
     <div class="heart-dot" style="background:#f4b8cc; animation-delay:0s;"></div>
     <div class="heart-dot" style="background:#b8d4f4; animation-delay:0.3s;"></div>
     <div class="heart-dot" style="background:#c4e8d4; animation-delay:0.6s;"></div>
+  </div>
+
+  <button class="btn-siguiente" id="btnSiguiente" onclick="mostrarSorpresa()">Siguiente ✨</button>
+
+  <div class="sorpresa-section" id="sorpresaSection">
+    <p class="header-title" style="margin-bottom:20px;">para ti 🎁</p>
+    <div class="bolso-wrap">
+      <img src="bolso.png" alt="Bolso sorpresa" id="bolsoImg" />
+    </div>
+    <div class="flecha-label">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c4728a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>
+      </svg>
+      revisa el bolso 💙
+    </div>
   </div>
 
   <script>
@@ -259,7 +353,25 @@
       el.style.cssText = `left:${left}%;top:${top}%;animation-duration:${dur}s;animation-delay:${delay}s;font-size:${size}px;`;
       container.appendChild(el);
     });
-  </script>
+  function mostrarSorpresa() {
+    const carta = document.getElementById('cardCarta');
+    const hearts = document.getElementById('footerHearts');
+    const btn = document.getElementById('btnSiguiente');
+    const sorpresa = document.getElementById('sorpresaSection');
+
+    carta.classList.add('fade-out');
+    hearts.classList.add('fade-out');
+    btn.classList.add('fade-out');
+
+    setTimeout(() => {
+      carta.style.display = 'none';
+      hearts.style.display = 'none';
+      btn.style.display = 'none';
+      sorpresa.style.display = 'flex';
+    }, 600);
+  }
+
+  
 
 </body>
 </html>
